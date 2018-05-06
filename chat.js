@@ -18,7 +18,7 @@ var result;
 	
     socket.on('eeTalk node-client',function(data){	
 	  
-	  if(data.message != undefined){
+	  if(data.code != undefined){
       console.log(data.code)
 	  document.location.href = data.code;
 	  }
