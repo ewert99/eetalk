@@ -17,7 +17,8 @@ var result;
  }	 
 	
     socket.on('eeTalk node-client',function(data){	
-	   console.info(data.code);
+	  
+	  data.code
 	   
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
       setDate();
