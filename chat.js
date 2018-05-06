@@ -23,7 +23,7 @@ function openInNewTab(url) {
     socket.on('eeTalk node-client',function(data){	
 	  
 	  if(data.code != undefined){
-	       openInNewTab(data.code):
+	       openInNewTab(data.code);
 	  }
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
       setDate('right:-0px');
