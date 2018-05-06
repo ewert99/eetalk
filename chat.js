@@ -22,7 +22,7 @@ var result;
 	  document.location.href = data.code;
 	  }
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
-      setDate();
+      setDate('left:15px');
 	});		
 	
 function eeTalkSendMessage(msg){
@@ -83,11 +83,11 @@ function updateScrollbar() {
 $('.messages-content').animate({ scrollTop: 9999 }, 'slow');
 }
 
-function setDate(){
+function setDate(padding){
   d = new Date()
   if (m != d.getMinutes()) {
     m = d.getMinutes();
-    $('<div class="timestamp">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
+    $('<div class="timestamp" style="' + padding + '">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
     $('<div class="checkmark-sent-delivered">&check;</div>').appendTo($('.message:last'));
     $('<div class="checkmark-read">&check;</div>').appendTo($('.message:last'));
   }
