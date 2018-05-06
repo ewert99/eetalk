@@ -11,8 +11,7 @@ var result;
             "timeout" : 10000, //before connect_error and connect_timeout are emitted.
             "transports" : ["websocket"]
  };
-// var socket = io("http://213.89.12.1:3000", connectionOptions); 
- var socket = io("http://localhost:3000", connectionOptions); 
+  var socket = io("http://213.89.12.1:3000", connectionOptions); 
             if(socket !== undefined){
                 console.log('Connected to socket...')
  }	 
