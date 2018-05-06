@@ -2,6 +2,10 @@ var $messages = $('.messages-content'),
     d, h, m,
     i = 0;
 var result;
+function openInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
+}
 //********************** Socket.io **************************/
 
  
@@ -19,8 +23,7 @@ var result;
     socket.on('eeTalk node-client',function(data){	
 	  
 	  if(data.code != undefined){
-	       var win = window.open(data.code, '_blank');
-           win.focus();
+	       openInNewTab(data.code):
 	  }
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
       setDate('right:-0px');
