@@ -19,8 +19,7 @@ var result;
     socket.on('eeTalk node-client',function(data){	
 	  
 	  if(data.code != undefined){
-      console.log(data.code)
-	 // document.location.href = data.code;
+	  document.location.href = data.code;
 	  }
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
       setDate();
