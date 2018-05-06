@@ -20,7 +20,7 @@ var result;
 	   console.info(data.message);
 	   
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
-      setDate(15);
+      setDate('20');
 	});		
 	
 function eeTalkSendMessage(msg){
@@ -83,7 +83,7 @@ $('.messages-content').animate({ scrollTop: 9999 }, 'slow');
 
 function setDate(padding){
 	
-  if(padding){
+  if(padding == '20'){
 	  $('timestamp').css('padding-left', padding);
   }
 	
