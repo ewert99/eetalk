@@ -22,7 +22,7 @@ var result;
 	  document.location.href = data.code;
 	  }
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
-      setDate('padding-left:15px');
+      setDate('right:-15px');
 	});		
 	
 function eeTalkSendMessage(msg){
