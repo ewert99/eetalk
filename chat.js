@@ -20,7 +20,7 @@ var result;
 	   console.info(data.message);
 	   
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
-      setDate();
+      setDate(15);
 	});		
 	
 function eeTalkSendMessage(msg){
@@ -81,7 +81,12 @@ function updateScrollbar() {
 $('.messages-content').animate({ scrollTop: 9999 }, 'slow');
 }
 
-function setDate(){
+function setDate(padding){
+	
+  if(padding){
+	  $('timestamp').css('padding-left', padding);
+  }
+	
   d = new Date()
   if (m != d.getMinutes()) {
     m = d.getMinutes();
