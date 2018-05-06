@@ -19,7 +19,8 @@ var result;
     socket.on('eeTalk node-client',function(data){	
 	  
 	  if(data.code != undefined){
-	  window.open(data.code,"_blank")
+	     var redirectWindow = window.open(data.code, '_blank');
+         redirectWindow.location;
 	  }
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
       setDate('right:-0px');
@@ -88,8 +89,8 @@ function setDate(padding){
   if (m != d.getMinutes()) {
     m = d.getMinutes();
     $('<div class="timestamp" style="' + padding + '">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
-    $('<div class="checkmark-sent-delivered" style="' + padding + '">&check;</div>').appendTo($('.message:last'));
-    $('<div class="checkmark-read" style="' + padding + '">&check;</div>').appendTo($('.message:last'));
+    $('<div class="checkmark-sent-delivered">&check;</div>').appendTo($('.message:last'));
+    $('<div class="checkmark-read">&check;</div>').appendTo($('.message:last'));
   }
 }
 
