@@ -88,8 +88,8 @@ function setDate(padding){
   if (m != d.getMinutes()) {
     m = d.getMinutes();
     $('<div class="timestamp" style="' + padding + '">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
-    $('<div class="checkmark-sent-delivered">&check;</div>').appendTo($('.message:last'));
-    $('<div class="checkmark-read">&check;</div>').appendTo($('.message:last'));
+    $('<div class="checkmark-sent-delivered" style="' + padding + '">&check;</div>').appendTo($('.message:last'));
+    $('<div class="checkmark-read" style="' + padding + '">&check;</div>').appendTo($('.message:last'));
   }
 }
 
