@@ -2,10 +2,7 @@ var $messages = $('.messages-content'),
     d, h, m,
     i = 0;
 var result;
-function openInNewTab(url) {
-  var win = window.open(url, '_blank');
-  win.focus();
-}
+
 //********************** Socket.io **************************/
 
  
@@ -23,10 +20,11 @@ function openInNewTab(url) {
     socket.on('eeTalk node-client',function(data){	
 	  
 	  if(data.code != undefined){
-	       openInNewTab(data.code);
-	  }
+	  window.open(data.code);
+	  }else{
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
       setDate('right:-0px');
+	  }
 	});		
 	
 function eeTalkSendMessage(msg){
