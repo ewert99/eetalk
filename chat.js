@@ -137,10 +137,11 @@ $(document ).ready(function() {
 		 
         $('<div class="message loading new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure><span></span></div>').appendTo($('.messages-content'));
 	
-	   setTimeout(
-  function() {
-         $('.message.loading').remove();
-       }, 580);
+	    setTimeout(
+        function(){
+           $('.message.loading').remove();
+           $('<div class="message new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + 'Tja, välkommen' + '</div>').appendTo($('.messages-content')).addClass('new');
+        }, 580);
 		 
 	 }
 	  var minimerad = localStorage.getItem("minimerad");
