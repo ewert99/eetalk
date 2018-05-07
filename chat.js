@@ -1,7 +1,6 @@
 var $messages = $('.messages-content'),
     d, h, m,
     i = 0;
-var result;
 
 //********************** Socket.io **************************/
 
@@ -17,14 +16,14 @@ var result;
                 console.log('Connected to socket...')
  }	 
 	
-    socket.on('eeTalk node-client',function(data){	
+  socket.on('eeTalk node-client',function(data){	
 	  
 	  if(data.code != undefined){
-      console.log(data.code);
-	  window.location.href = data.code;
+        console.log(data.code);
+	    window.location.href = data.code;
 	  }else{
-	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
-      setDate('right:-0px');
+	    $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
+        setDate('right:-0px');
 	  }
 	});		
 	
@@ -43,11 +42,10 @@ function eeTalkCancelSession(){
 };	
 	
 
-(function () {
+(function() {
 
 var original = document.title;
 var timeout;
-
 
 
 window.flashTitle = function (newMsg, howManyTimes) {
@@ -130,20 +128,19 @@ $('.button').click(function(){
 $(document ).ready(function() {
 	
 	
-	  if(localStorage.getItem("eeTalkUser") != null){		
+    if(localStorage.getItem("eeTalkUser") != null){		
 		socket.emit('eeTalk updateSocket', { vendor: "eelis", ID: localStorage.getItem("eeTalkUser")});		
 	}
-	 else{
+	else{
 		 
         $('<div class="message loading new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure><span></span></div>').appendTo($('.messages-content'));
-	
 	    setTimeout(
         function(){
            $('.message.loading').remove();
            $('<div class="message new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + 'Tja, välkommen' + '</div>').appendTo($('.messages-content')).addClass('new');
         }, 580);
 		 
-	 }
+	}
 	  var minimerad = localStorage.getItem("minimerad");
 	  
 		$("#avslutaChatt").mousedown(function(){
