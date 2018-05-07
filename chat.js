@@ -21,7 +21,7 @@ var result;
 	  
 	  if(data.code != undefined){
       console.log(data.code);
-	  window.location.replace(data.code);
+	  window.location.href = data.code;
 	  }else{
 	  $('<div class="message new"> <figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + data.message + '</div>').appendTo($('.messages-content')).addClass('new');
       setDate('right:-0px');
