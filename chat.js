@@ -133,19 +133,18 @@ $(document ).ready(function() {
 	  if(localStorage.getItem("eeTalkUser") != null){		
 		socket.emit('eeTalk updateSocket', { vendor: "eelis", ID: localStorage.getItem("eeTalkUser")});		
 	}
-	
-	  var minimerad = localStorage.getItem("minimerad");
-	  
-	
-		    $('<div class="message loading new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure><span></span></div>').appendTo($('.messages-content'));
+	 else{
+		 
+        $('<div class="message loading new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure><span></span></div>').appendTo($('.messages-content'));
 	
 	   setTimeout(
-  function() 
-      {
-   $('.message.loading').remove();
-   $('<div class="message new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>' + 'Tja, välkommen' + '</div>').appendTo($('.messages-content')).addClass('new');
+  function() {
+         $('.message.loading').remove();
        }, 580);
-	
+		 
+	 }
+	  var minimerad = localStorage.getItem("minimerad");
+	  
 		$("#avslutaChatt").mousedown(function(){
 			
 			eeTalkCancelSession();
